@@ -19,6 +19,7 @@ dependencies {
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 
 	compileOnly("org.projectlombok:lombok:1.18.24")
+	annotationProcessor("org.projectlombok:lombok:1.18.24")
 }
 
 tasks.named('test') {
