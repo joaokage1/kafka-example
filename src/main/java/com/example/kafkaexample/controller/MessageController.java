@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class MessageController {
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, MessageRequest> kafkaTemplate;
     @PostMapping
     public void publish(@RequestBody MessageRequest request){
-        kafkaTemplate.send("kafka-topic-1",request.message());
+        kafkaTemplate.send("kafka-topic-1",request);
     }
 }
